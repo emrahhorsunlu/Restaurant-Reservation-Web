@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.emrah.emrah.EmrahApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.87 s -- in com.emrah.emrah.EmrahApplicationTests

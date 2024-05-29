@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Menüsü</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Özel CSS -->
+    <style>
+        /* Özel stillendirmeler */
+        .menu-category {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .menu-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .menu-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .footer {
+            position: fixed; /* Footer'ı sabit tut */
+            bottom: 0; /* Sayfanın altına yerleştir */
+            width: 100%; /* Tam genişliğe yay */
+            background-color: #343a40; /* Footer arka plan rengi */
+            color: white; /* Yazı rengi */
+            text-align: center; /* Metni ortala */
+            padding: 20px 0; /* Boşluk ayarı */
+        }
+        .jumbotron {
+            background-image: url('http://fishermanslandingrestaurant.com/wp-content/uploads/2014/05/main_background2.png');
+            background-size: cover;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">ISUBÜ Restaurant</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">Anasayfa</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="menu">Menü</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservation">Rezervasyon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="display-4">Menümüz</h1>
+        <p class="lead">Birçok çeşitle birlikte bize özel menüler!</p>
+    </div>
+</div>
+<!-- Menü -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="menu-category">Kahvaltı</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Omlet">
+                Omlet - $10
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Menemen">
+                Menemen - $8
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Simit">
+                Simit - $2
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="menu-category">Öğle Yemeği</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Köfte">
+                Köfte - $12
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Tavuk Şiş">
+                Tavuk Şiş - $14
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Salata">
+                Salata - $6
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h2 class="menu-category">Akşam Yemeği</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Izgara Balık">
+                Izgara Balık - $18
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Spagetti">
+                Spagetti - $10
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Kuzu Pirzola">
+                Kuzu Pirzola - $20
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="menu-category">İçecekler</h2>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Kola">
+                Kola - $2
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Çay">
+                Çay - $1
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/50" alt="Kahve">
+                Kahve - $3
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <span>&copy; 2024 ISUBÜ Restaurant Company. Tüm Hakları Saklıdır.</span>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Girişi - ISUBÜ Restaurant</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title text-center">Admin Girişi</h5>
+        <form id="loginForm" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Parola</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap ve JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Form elementini al
+    const loginForm = document.getElementById('loginForm');
+
+    // Form submit olayını dinle
+    loginForm.addEventListener('submit', function (event) {
+        // Sayfanın yeniden yüklenmesini önle
+        event.preventDefault();
+
+        // Form verilerini al
+        const formData = new FormData(loginForm);
+
+        // Kullanıcı bilgilerini oluştur
+        const userData = {
+            username: formData.get('username'),
+            password: formData.get('password')
+        };
+        console.log(userData);
+        // Sunucuya POST isteği gönder
+        fetch('/admin/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    // Başarılı yanıtta kullanıcıyı yönlendir
+                    window.location.href = '/admin/reservationlist';
+                } else {
+                    // Başarısız yanıtta kullanıcıya bildirim göster
+                    alert('Kullanıcı adı veya parola yanlış!');
+                }
+            })
+            .catch(function (error) {
+                // Hata durumunda kullanıcıya bildirim göster
+                alert('Giriş yapılırken bir hata oluştu: ' + error.message);
+            });
+    });
+
+</script>
+
+</body>
+</html>

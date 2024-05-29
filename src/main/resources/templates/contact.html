@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - ISUBÜ Restaurant</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Özel CSS -->
+    <style>
+        /* Özel stillendirmeler */
+        .contact-info {
+            margin-top: 50px;
+        }
+        .footer {
+            background-color: #343a40; /* Footer arka plan rengi */
+            color: white; /* Yazı rengi */
+            text-align: center; /* Metni ortala */
+            padding: 20px 0; /* Boşluk ayarı */
+            width: 100%; /* Tam genişlik */
+            position: relative; /* Footer içeriğin sonuna göre konumlandır */
+            bottom: 0; /* Sayfanın altına sabitlenmiş */
+        }
+        .jumbotron {
+            background-image: url('http://fishermanslandingrestaurant.com/wp-content/uploads/2014/05/main_background2.png');
+            background-size: cover;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            margin-bottom: 0; /* Jumbotron'un alt boşluğunu kaldır */
+        }
+        header {
+            margin-bottom: 0px; /* Header'ın alt boşluğunu ayarla */
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">ISUBÜ Restaurant</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu">Menü</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservation">Rezervasyon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="display-4">İletişim</h1>
+        <p class="lead">Bize ulaş!</p>
+    </div>
+</div>
+<!-- İletişim Bilgileri -->
+<div class="container contact-info">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Bize Ulaşın</h2>
+            <p>Telefon: (0246) 214 62 00</p>
+            <p>E-posta: info@isuburestaurant.com</p>
+            <p>Adres: Çünür, 32000 Bozanönü/Isparta Merkez/Isparta</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Form ile İletişim</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Adınız Soyadınız</label>
+                    <input type="text" class="form-control" id="name" placeholder="Adınız Soyadınız">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta Adresiniz</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-posta Adresiniz">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mesajınız</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Mesajınız"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <span>&copy; 2024 ISUBÜ Restaurant Company. Tüm Hakları Saklıdır.</span>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervasyon - ISUBÜ Restaurant</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">ISUBÜ Restaurant</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu">Menü</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact">İletişim</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="reservation">Rezervasyon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <style>
+        /* Özel stillendirmeler */
+        .reservation-form {
+            margin-top: 50px;
+        }
+        .footer {
+            background-color: #343a40; /* Footer arka plan rengi */
+            color: white; /* Yazı rengi */
+            text-align: center; /* Metni ortala */
+            padding: 20px 0; /* Boşluk ayarı */
+            width: 100%; /* Tam genişlik */
+            position: fixed; /* Footer'ı sayfanın en altında sabit tut */
+            bottom: 0; /* Footer'ı sayfanın en altında sabit tut */
+        }
+        body {
+            padding-bottom: 70px; /* Footer'ı altta tutmak için gereken boşluk */
+        }
+        .jumbotron {
+            background-image: url('http://fishermanslandingrestaurant.com/wp-content/uploads/2014/05/main_background2.png');
+            background-size: cover;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            margin-bottom: 0; /* Jumbotron'un alt boşluğunu kaldır */
+        }
+    </style>
+</header>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="display-4">Rezervasyon</h1>
+        <p class="lead">Yerini ayıralım!</p>
+    </div>
+</div>
+<!-- Rezervasyon Formu -->
+<div class="container reservation-form">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center">Rezervasyon Yap</h1>
+            <!-- Forma bir id ekleyelim, böylece JavaScript kodu ona erişebilir -->
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="name">Adınız Soyadınız</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Adınız">
+                </div>
+                <div class="form-group">
+                    <label for="name">Soyadınız</label>
+                    <input type="text" class="form-control" id="surname" name="surname" placeholder="Soyadınız">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta Adresiniz</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="E-posta Adresiniz">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon Numaranız</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefon Numaranız">
+                </div>
+                <div class="form-group">
+                    <label for="date">Tarih</label>
+                    <input type="date" class="form-control" id="date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="time">Saat</label>
+                    <input type="time" class="form-control" id="time" name="time">
+                </div>
+                <div class="form-group">
+                    <label for="people">Kişi Sayısı</label>
+                    <input type="number" class="form-control" id="people" name="people" min="1">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Rezervasyon Yap</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <span>&copy; 2024 ISUBÜ Restaurant Company. Tüm Hakları Saklıdır.</span>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    // Form elementini al
+    const reservationForm = document.getElementById('reservationForm');
+
+    // Form submit olayını dinle
+    reservationForm.addEventListener('submit', function (event) {
+        // Sayfanın yeniden yüklenmesini önle
+        event.preventDefault();
+
+        // Form verilerini al
+        const formData = new FormData(reservationForm);
+
+        // Rezervasyon verilerini oluştur
+        const reservationData = {
+            first_name: formData.get('name'),
+            last_name: formData.get('surname'),
+            email: formData.get('email'),
+            phone_number: formData.get('phone'),
+            date: formData.get('date'),
+            time: formData.get('time'),
+            number_of_people: parseInt(formData.get('people'))
+        };
+        console.log(reservationData);
+        // Sunucuya POST isteği gönder
+        axios.post('/api/reservations', reservationData)
+            .then(function (response) {
+                // Başarılı yanıtta kullanıcıya bildirim göster
+                alert('Rezervasyon başarıyla yapıldı!');
+                // Formu sıfırla
+                reservationForm.reset();
+            })
+            .catch(function (error) {
+                // Hata durumunda kullanıcıya bildirim göster
+                alert('Rezervasyon yapılırken bir hata oluştu: ' + error.message);
+            });
+    });
+
+</script>
+
+</body>
+</html>
