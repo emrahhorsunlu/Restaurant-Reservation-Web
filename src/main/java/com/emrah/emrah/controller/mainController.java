@@ -27,10 +27,7 @@ public class mainController {
     public String reservation(Model model){
         return "reservation";
     }
-    @GetMapping("admin/reservationlist")
-    public String reservationlist(Model model){
-        return "reservationlist";
-    }
+
     @GetMapping("/login")
     public String login (Model model){
         return "login";
