@@ -27,9 +27,6 @@ public class mainController {
     public String reservation(Model model){
         return "reservation";
     }
-
-    @GetMapping("/login")
-    public String login (Model model){
-        return "login";
-    }
 }
+
+
